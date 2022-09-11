@@ -38,9 +38,9 @@ result = streamlit_bokeh_events(
 if result:
     lat = result["GET_LOCATION"]["lat"]
     lng = result["GET_LOCATION"]["lng"]
-    lat1 = lat + 0.0001
-    lat2 = lat - 0.0001
-    lng1 = lng + 0.0001
-    lng2 = lng - 0.0001
+    lat1 = lat + 0.0005
+    lat2 = lat - 0.0005
+    lng1 = lng + 0.0005
+    lng2 = lng - 0.0005
     html = html_format.format(60, lat1, lng1, lat2, lng1, lat2, lng2, lat1, lng2)
     components.html(html, height=480)
