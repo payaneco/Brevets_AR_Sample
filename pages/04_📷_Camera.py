@@ -5,6 +5,7 @@ components.html("""
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <div id="aaa"/>
     <a-scene
       vr-mode-ui="enabled: false"
       embedded
@@ -21,6 +22,7 @@ components.html("""
     </a-scene>
     <script>
         function getLocation() {
+            document.getElementById("aaa").innerHTML = "hoge";
             navigator.geolocation.getCurrentPosition(setLatLong);
         }
         function setLatLong(position) {
