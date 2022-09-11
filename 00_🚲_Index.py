@@ -9,11 +9,11 @@ html_format = """
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-      <a-text value="PC1" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {1}; longitude: {2};"></a-text>
+      <a-text value="PC1🐈" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {1}; longitude: {2};"></a-text>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
     <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-      <a-text value="PC1" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {3}; longitude: {4};"></a-text>
+      <a-text value="PC2" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {3}; longitude: {4};"></a-text>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
 """
@@ -39,9 +39,9 @@ result = streamlit_bokeh_events(
 if result:
     lat = result["GET_LOCATION"]["lat"]
     lng = result["GET_LOCATION"]["lng"]
-    lat1 = lat + 0.000001
+    lat1 = lat + 0.00001
     lng1 = lng
-    lat2 = lat - 0.000001
+    lat2 = lat - 0.00001
     lng2 = lng
     html = html_format.format(60, lat1, lng1, lat2, lng2)
     components.html(html, height=480)
