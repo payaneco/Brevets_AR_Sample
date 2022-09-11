@@ -30,6 +30,6 @@ components.html("""
             let p = "latitude: " + position.coords.latitude + "; longitude: + " + position.coords.longitude +";";
             ar-tag.setAttribute("gps-entity-place", p);
         }
-        window.onload = getLocation;
+        getLocation();
     </script>
 """, height=480)
