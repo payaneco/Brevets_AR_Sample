@@ -9,10 +9,10 @@ html_format = """
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-      <a-text value="PC1" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {1}; longitude: {2};"></a-text>
-      <a-text value="PC2" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {3}; longitude: {4};"></a-text>
-      <a-text value="PC3" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {5}; longitude: {6};"></a-text>
-      <a-text value="PC4" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {7}; longitude: {8};"></a-text>
+      <a-text value="PC1" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {1}; longitude: {2};" color="white"></a-text>
+      <a-text value="PC2" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {3}; longitude: {4};" color="red"></a-text>
+      <a-text value="PC3" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {5}; longitude: {6};" color="navy"></a-text>
+      <a-text value="PC4" look-at="[gps-camera]" scale="{0} {0} {0}" gps-entity-place="latitude: {7}; longitude: {8};" color="green"></a-text>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
 """
@@ -42,5 +42,5 @@ if result:
     lat2 = lat - 0.0001
     lng1 = lng + 0.0001
     lng2 = lng - 0.0001
-    html = html_format.format(60, lat1, lng1, lat2, lng1, lat1, lng2, lat2, lng2)
+    html = html_format.format(60, lat1, lng1, lat2, lng1, lat2, lng2, lat1, lng2)
     components.html(html, height=480)
